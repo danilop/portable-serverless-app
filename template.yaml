@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: An example of portable serverless app.
+
+Resources:
+
+  GreetingsAPIFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: adapterAPI.handler
+      Runtime: nodejs8.10
+      CodeUri: src/
+      Environment:
+        Variables:
+          GREETING: 'Good Morning'
+          DEFAULT_NAME: 'from AWS Lambda and Amazon API Gateway'
+      Events:
+        GetResource:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: GET
+
+  GreetingsSQSFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: adapterSQS.handler
+      Runtime: nodejs8.10
+      CodeUri: src/
+      Environment:
+        Variables:
+          GREETING: 'Good Morning'
+          DEFAULT_NAME: 'from AWS Lambda and Amazon SQS'
+      Events:
+        MySQSEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt GreetingsQueue.Arn
+            BatchSize: 10
+
+  GreetingsQueue:
+    Type: AWS::SQS::Queue
+
+Outputs:
+
+    GreetingsAPI:
+      Description: "API Gateway endpoint URL for Prod stage for GreetingsAPI function"
+      Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
+
+    GreetingsQueue:
+      Description: "SQS queue processed by the GreetingsSQS function"
+      Value: !GetAtt GreetingsQueue.QueueName
