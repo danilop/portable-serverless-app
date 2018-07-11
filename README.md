@@ -5,7 +5,7 @@ An example of portable serverless app that can run on multiple platforms.
 The core business logic (a simple "Hello World" application in this case) is isolated from the adapters for running on AWS Lambda (receving API calls from Amazon API Gateway or processing a message queue managed by Amazon SQS) or
 as a web app, locally or in a Docker container.
 
-```bash
+```
 .
 ├── LICENSE                     <-- Apache License 2.0
 ├── README.md                   <-- This instructions file
@@ -28,7 +28,7 @@ as a web app, locally or in a Docker container.
 
 To run automated tests:
 
-```bash
+```
 cd src/
 npm test
 ```
@@ -37,7 +37,7 @@ npm test
 
 To run the wep app locally:
 
-```bash
+```
 cd src/
 npm install
 npm start
@@ -52,7 +52,7 @@ Try the local execution using the following URLs (assuming default port 3000):
 
 Deploy using AWS SAM:
 
-```bash
+```
 aws cloudformation package --s3-bucket danilop --s3-prefix packages --template-file template.yaml --output-template-file packaged.yaml
 aws cloudformation deploy --template-file packaged.yaml --stack-name PortableServerlessApp --capabilities CAPABILITY_IAM
 aws cloudformation describe-stacks --stack-name PortableServerlessApp
@@ -66,7 +66,7 @@ Try the plain URL or with a name adding at the end of the API Gateway endpoint ?
 
 Build and run the container locally using the following commands (replace:
 
-```bash
+```
 docker build -t not-so-serverless .
 docker run -p 33000:3000 -d not-so-serverless
 ```
