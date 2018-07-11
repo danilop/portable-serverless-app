@@ -28,17 +28,6 @@ Made with ❤️ by Danilo Poccia. Available on the [AWS Serverless Application 
 └── Dockerfile                  <-- To deploy web app in a container
 ```
 
-## Testing
-
-Some tests are focused on the business logic, other on the intergation with AWS Lambda or other platforms.
-
-To run automated tests:
-
-```
-cd src/
-npm test
-```
-
 ## Local execution
 
 To run the wep app locally:
@@ -80,3 +69,14 @@ Try the local container using the following URLs (assuming port 33000):
 
 - http://localhost:33000
 - http://localhost:33000?name=Your%20Name
+
+## Testing
+
+Some tests are focused on the business logic, other on the intergation with AWS Lambda or other platforms.
+
+To run automated tests:
+
+```
+cd src/
+npm test
+```
