@@ -3,7 +3,7 @@
 An example of portable serverless app that can run on multiple platforms.
 
 The core business logic (a simple "Hello World" application in this case) is isolated from the adapters required for running on:
-- AWS Lambda, receving API calls from Amazon API Gateway
+- AWS Lambda, receiving API calls from Amazon API Gateway
 - AWS Lambda, processing messages from a queue managed by Amazon SQS
 - as a web app, locally or in a Docker container.
 
