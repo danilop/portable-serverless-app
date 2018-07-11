@@ -7,8 +7,6 @@ The core business logic (a simple "Hello World" application in this case) is iso
 - AWS Lambda, processing messages from a queue managed by Amazon SQS
 - as a web app, locally or in a Docker container.
 
-Made with ❤️ by Danilo Poccia. Available on the [AWS Serverless Application Repository](https://aws.amazon.com/serverless).
-
 ```
 .
 ├── LICENSE                     <-- Apache License 2.0
@@ -27,6 +25,8 @@ Made with ❤️ by Danilo Poccia. Available on the [AWS Serverless Application 
 └── template.yaml               <-- SAM template
 └── Dockerfile                  <-- To deploy web app in a container
 ```
+
+Made with ❤️ by Danilo Poccia. Available on the [AWS Serverless Application Repository](https://aws.amazon.com/serverless).
 
 ## Local execution
 
