@@ -68,7 +68,7 @@ The URL of the API is in the response of the describe-stack in Stacks -> Outputs
 
 Try the plain URL or with a name adding at the end of the API Gateway endpoint `?name=Your%20Name`
 
-# Container deployment
+## Container deployment
 
 Build and run the container locally using the following commands (replace:
 
