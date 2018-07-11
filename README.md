@@ -2,8 +2,10 @@
 
 An example of portable serverless app that can run on multiple platforms.
 
-The core business logic (a simple "Hello World" application in this case) is isolated from the adapters for running on AWS Lambda (receving API calls from Amazon API Gateway or processing a message queue managed by Amazon SQS) or
-as a web app, locally or in a Docker container.
+The core business logic (a simple "Hello World" application in this case) is isolated from the adapters required for running on:
+- AWS Lambda, receving API calls from Amazon API Gateway
+- AWS Lambda, processing messages from a queue managed by Amazon SQS
+- as a web app, locally or in a Docker container.
 
 ```
 .
@@ -25,6 +27,8 @@ as a web app, locally or in a Docker container.
 ```
 
 ## Testing
+
+Some tests are focused on the business logic, other on the intergation with AWS Lambda or other platforms.
 
 To run automated tests:
 
@@ -53,7 +57,7 @@ Try the local execution using the following URLs (assuming default port 3000):
 Deploy using AWS SAM:
 
 ```
-aws cloudformation package --s3-bucket danilop --s3-prefix packages --template-file template.yaml --output-template-file packaged.yaml
+aws cloudformation package --s3-bucket <BUCKET> --s3-prefix <PREFIX> --template-file template.yaml --output-template-file packaged.yaml
 aws cloudformation deploy --template-file packaged.yaml --stack-name PortableServerlessApp --capabilities CAPABILITY_IAM
 aws cloudformation describe-stacks --stack-name PortableServerlessApp
 ```
