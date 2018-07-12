@@ -53,7 +53,7 @@ aws cloudformation deploy --template-file packaged.yaml --stack-name PortableSer
 aws cloudformation describe-stacks --stack-name PortableServerlessApp
 ```
 
-The URL of the API is in the response of the describe-stack in Stacks -> Outputs. 
+The URL of the API is in the response of describe-stack in Stacks -> Outputs. 
 
 Try the plain URL or with a name adding at the end of the API Gateway endpoint `?name=Your%20Name`
 
