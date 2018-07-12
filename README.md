@@ -59,7 +59,7 @@ Try the plain URL or with a name adding at the end of the API Gateway endpoint `
 
 ## Container deployment
 
-Build and run the container locally using the following commands (replace:
+Build and run the container locally using the following commands:
 
 ```
 docker build -t not-so-serverless .
