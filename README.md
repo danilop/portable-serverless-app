@@ -45,7 +45,7 @@ Try the local execution using the following URLs (assuming default port 3000):
 
 ## Serverless deployment
 
-Deploy using [AWS SAM](https://github.com/awslabs/serverless-application-model):
+Deploy using [AWS SAM](https://github.com/awslabs/serverless-application-model), choose an [S3 bucket](https://aws.amazon.com/s3/) (and optionally a prefix) to host the package of the app:
 
 ```
 aws cloudformation package --s3-bucket <BUCKET> --s3-prefix <PREFIX> --template-file template.yaml --output-template-file packaged.yaml
