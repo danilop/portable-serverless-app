@@ -1,11 +1,11 @@
 # Portable Serverless App
 
-An example of portable serverless app that can run on multiple platforms.
+An example of portable [serverless](https://aws.amazon.com/serverless/) app that can run on multiple platforms.
 
 The core business logic (a simple "Hello World" application in this case) is isolated from the adapters required for running on:
-- AWS Lambda, receiving API calls from Amazon API Gateway
-- AWS Lambda, processing messages from a queue managed by Amazon SQS
-- as a web app, locally or in a Docker container.
+- [AWS Lambda](https://aws.amazon.com/lambda/), receiving API calls from [Amazon API Gateway](https://aws.amazon.com/api-gateway/)
+- AWS Lambda, processing messages from a queue managed by [Amazon SQS](https://aws.amazon.com/sqs/)
+- as a web app, locally or in a Docker [container](https://aws.amazon.com/containers/).
 
 ```
 .
@@ -45,7 +45,7 @@ Try the local execution using the following URLs (assuming default port 3000):
 
 ## Serverless deployment
 
-Deploy using AWS SAM:
+Deploy using [AWS SAM](https://github.com/awslabs/serverless-application-model):
 
 ```
 aws cloudformation package --s3-bucket <BUCKET> --s3-prefix <PREFIX> --template-file template.yaml --output-template-file packaged.yaml
@@ -72,7 +72,7 @@ Try the local container using the following URLs (assuming port 33000):
 
 ## Testing
 
-Some tests are focused on the business logic, other on the intergation with AWS Lambda or other platforms.
+Some tests are focused on the business logic, other on the integration with AWS Lambda or other platforms. The separation of concerns between business logic and adapters improves the testability of the solution.
 
 To run automated tests:
 
